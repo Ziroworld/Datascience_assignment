@@ -1,0 +1,23 @@
+library(tidyverse)
+library(dplyr)
+library(readr)
+
+# cleaning coverage file accesed in 2024-07-08
+file_path <- "/home/rohan-manandhar/College Every Semester Data/Semester 4/Data_Science/0assignment/data/201809_fixed_pc_r03/201809_fixed_pc_coverage_r01.csv"
+
+# Read the CSV file into a dataframe
+coverage_df <- read_csv(file_path)
+
+head(coverage_df)
+View(coverage_df)
+
+View(names(coverage_df))
+nrow(coverage_df)
+
+str(coverage_df)
+
+missing_values <- sapply(coverage_df, function(x) sum(is.na(x)))
+print("Missing values in each column:")
+print(missing_values)
+
+summary(coverage_df)
